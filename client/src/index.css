@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Default Theme Variables */
+:root {
+  --primary-color: hsl(217, 91%, 60%);
+  --background-color: #f9fafb;
+  --card-background: white;
+  --text-color: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --button-hover: hsl(217, 91%, 50%);
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+}
+
+/* Pink Theme Variables */
+.theme-pink {
+  --primary-color: #ec4899;  /* pink-500 */
+  --background-color: #fdf2f8; /* pink-50 */
+  --card-background: #fce7f3; /* pink-100 */
+  --text-color: #831843; /* pink-900 */
+  --text-secondary: #be185d; /* pink-700 */
+  --border-color: #fbcfe8; /* pink-200 */
+  --button-hover: #db2777; /* pink-600 */
+  --success-color: #ec4899; /* pink-500 */
+  --warning-color: #f472b6; /* pink-400 */
+  --danger-color: #be185d; /* pink-700 */
+}
+
+/* Apply theme variables to Tailwind classes */
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.border-primary {
+  border-color: var(--primary-color) !important;
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--primary-color) !important;
+}
+
+.hover\:text-primary:hover {
+  color: var(--primary-color) !important;
+}
+
+.hover\:border-primary:hover {
+  border-color: var(--primary-color) !important;
+}
+
+.bg-gray-50 {
+  background-color: var(--background-color) !important;
+}
+
+.bg-white {
+  background-color: var(--card-background) !important;
+}
+
+.text-gray-800, .text-gray-900 {
+  color: var(--text-color) !important;
+}
+
+.text-gray-500, .text-gray-600, .text-gray-700 {
+  color: var(--text-secondary) !important;
+}
+
+.border-gray-200, .border-gray-300 {
+  border-color: var(--border-color) !important;
+}
+
+.hover\:bg-blue-600:hover {
+  background-color: var(--button-hover) !important;
+}
+
+/* Theme-specific styles for TaskItem components */
+.theme-pink .task-item {
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(236, 72, 153, 0.1);
+}
+
+.theme-pink .task-item-low {
+  background: linear-gradient(to right, #fce7f3, #fdf2f8);
+  border-left: 4px solid #f9a8d4;
+}
+
+.theme-pink .task-item-normal {
+  background: linear-gradient(to right, #fce7f3, #fdf2f8);
+  border-left: 4px solid #f472b6;
+}
+
+.theme-pink .task-item-high {
+  background: linear-gradient(to right, #fce7f3, #fdf2f8);
+  border-left: 4px solid #ec4899;
+}
+
+.theme-pink .task-item-completed {
+  background: linear-gradient(to right, #f5f5f5, #fafafa);
+  border-left: 4px solid #d1d5db;
+}
